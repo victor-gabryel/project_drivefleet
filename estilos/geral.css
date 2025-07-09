@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #4CAF50;     /* Verde */
+    --cor-secundaria: #2C3E50;   /* Azul Escuro */
+    --cor-fundo: #FFFFFF;        /* Branco */
+    --cor-destaque: #FF5733;     /* Laranja */
+    --cor-fundo-suave: #F4F4F4;  /* Cinza Claro */
+    --cor-texto: #333333;        /* Cinza Escuro */
+}
+
+/* Estilo geral do cabeçalho */
+header {
+    background-color: var(--cor-secundaria); /* Azul Escuro */
+    color: var(--cor-fundo);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: var(--cor-destaque); /* Laranja */
+}
+
+/* Menu Hamburger */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 20px;
+    height: 16px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-icon div {
+    width: 20px;
+    height: 3px;
+    background-color: var(--cor-fundo);
+    border-radius: 2px;
+}
+
+/* Estilo do menu responsivo (inicialmente escondido) */
+.menu {
+    display: flex;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--cor-secundaria);
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.menu.mobile-menu a {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.menu.mobile-menu.show {
+    display: flex;
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde a navegação normal em telas pequenas */
+    }
+    .menu-icon {
+        display: flex; /* Mostra o menu hamburger */
+    }
+}
+

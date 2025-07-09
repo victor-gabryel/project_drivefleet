@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #4CAF50;     /* Azul Claro */
+    --cor-secundaria: #2C3E50;   /* Azul Escuro */
+    --cor-fundo: #FFFFFF;        /* Branco */
+    --cor-destaque: #FF5733;     /* Laranja */
+    --cor-fundo-suave: #F4F4F4;  /* Cinza Claro */
+    --cor-texto: #333333;        /* Cinza Escuro */
+}
+
+/* Evitar rolagem horizontal */
+body, html {
+    max-width: 100vw; /* Garante que o conteúdo não ultrapasse a largura da tela */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do corpo */
+main {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo geral do cabeçalho */
+header {
+    background-color: #2C3E50; /* Azul Escuro */
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #ffffff; 
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #FF5733; /* Laranja */
+}
+
+/* Menu Hamburger */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 20px;
+    height: 16px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-icon div {
+    width: 20px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* Estilo do menu responsivo (inicialmente escondido) */
+.menu {
+    display: flex;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #2C3E50;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.menu.mobile-menu a {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.menu.mobile-menu.show {
+    display: flex;
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde a navegação normal em telas pequenas */
+    }
+    .menu-icon {
+        display: flex; /* Mostra o menu hamburger */
+    }
+}
+
+
+
+
+
+/* Container principal */
+.container {
+  display: flex;
+  width: 100%; /* Garante que o container ocupe 100% da largura disponível */
+  max-width: 800px; /* Limita a largura máxima do container */
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção da imagem */
+.img-section {
+  flex: 1;
+  background-color: #f0f0f0;
+}
+
+.img-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Seção do formulário */
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
+}
+
+.login-form .links {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login-form .links a {
+  margin: 0 10px;
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-form .links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .img-section {
+    display: none;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}
